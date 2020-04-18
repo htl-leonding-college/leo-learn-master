@@ -142,6 +142,9 @@ Die Testergebnisse werden an die aufrufende Komponente (entweder Übungsmodus od
 @endsalt
 ----
 
+* Es ist zu klären, ob auch ein Online-Editor angeboten werden soll.
+zB https://theia-ide.org/[Eclipse Theia]
+
 ==== Private, organisationsinterne und öffentliche Beispiele
 
 Berechtigte Personen (meist Lehrkräfte der HTL Leonding) können Beispiele erstellen und diese
@@ -227,14 +230,14 @@ Dabei wird ein Tag sowohl den Beispielen als auch einem Abschnitt im Lehrplan/Sy
 * Schnittstellen zu LMS zB https://edufs.edu.htl-leonding.ac.at/moodle[Moodle], https://bigbluebutton.org[BigBlueButton]
 * Das System ist mehrsprachig (I18N). So kann man zB die Instructions in mehreren Sprachen angeben.
 In den Ansichten / Übersichten der Bsp werden die verfügbaren Sprachen als Icons angezeigt.
-* Die Implementierung der Teilsysteme kann frei gewählt werden.
+* Die technischen Plattformen (Programmiersprachen) der Teilsysteme muss für die Funktion unerheblich sein.
 
 == Ausbaustufen
 
-==== Erstellung des Übungsmoduls (LeoCode) mit der Programmiersprache Java
-==== Erstellung des Umfragemoduls
-==== Erstellung der Benutzerverwaltung
-==== Erstellung des Prüfungsmoduls
+=== Erstellung des Übungsmoduls (LeoCode) mit der Programmiersprache Java
+=== Erstellung des Umfragemoduls
+=== Erstellung der Benutzerverwaltung
+=== Erstellung des Prüfungsmoduls
 
 == Mögliche Erweiterungen
 
