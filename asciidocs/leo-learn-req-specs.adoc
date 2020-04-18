@@ -92,6 +92,16 @@ unittest -right-> caller
 Der vom Lernenden erstellte Programmcode wird an ein Testsystem (hier jUnit) übergeben.
 Die Testergebnisse werden an die aufrufende Komponente (entweder Übungsmodus oder Prüfungsmodul) zurückgegeben.
 
+Die Korrektheit soll mehrfach überprüft werden:
+
+* Ergebnisse auf Korrektheit (Unit-Tests)
+* Inhalt des Programmcodes überprüfen
+
+Beispiel:
+
+* Zum Lösen des Beispiels darf man nicht die Methode reverse() verwenden.
+* Es ist die Klasse StringBuilder zu verwenden.
+
 ==== Offene Fragen
 
 * Es ist zu prüfen, wie die Unittests technisch durchgeführt werden (ev. mit Jenkins)
@@ -152,7 +162,7 @@ Beispiele entweder
 
 * veröffentlichen (public) - andere Lehrkräfte und Lernende haben Zugriff
 * privat setzen (private) - weder andere Lehrkräfte noch Lernendde können darauf zugreifen
-*
+* organisationsintern: nur andere Lehrende dürfen auf die Beispiele zugreifen, aber keine Lernenden
 
 IMPORTANT: Im Vorfeld der Arbeit sind bestehende Formate zur Darstellung von Lernaufgaben
 zu analysieren und auf ihre Verwendbarkeit zu prüfen (zB SCORM, LOM, http://www.imsproject.org/question/index.html[IMS QTI]).
