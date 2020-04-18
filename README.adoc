@@ -4,6 +4,6 @@
 
 
 
-* https://htl-leonding-college.github.io/asciidoctor-docker-template
-* https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
+* https://htl-leonding-college.github.io/leo-learn-master
+* https://htl-leonding-college.github.io/leo-learn-master/leo-learn-req-specs.html[]
 
