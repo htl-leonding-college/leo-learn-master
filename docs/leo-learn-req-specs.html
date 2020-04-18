@@ -471,7 +471,7 @@ pre.rouge .hll * {
 </li>
 <li><a href="#_anforderungen">4. Anforderungen</a></li>
 <li><a href="#_ausbaustufen">5. Ausbaustufen</a>
-<ul class="sectlevel3">
+<ul class="sectlevel2">
 <li><a href="#_erstellung_des_übungsmoduls_leocode_mit_der_programmiersprache_java">5.1. Erstellung des Übungsmoduls (LeoCode) mit der Programmiersprache Java</a></li>
 <li><a href="#_erstellung_des_umfragemoduls">5.2. Erstellung des Umfragemoduls</a></li>
 <li><a href="#_erstellung_der_benutzerverwaltung">5.3. Erstellung der Benutzerverwaltung</a></li>
@@ -619,6 +619,32 @@ koordinierten Unterricht in allen Klassen sicherzustellen.</p>
 <p>Der vom Lernenden erstellte Programmcode wird an ein Testsystem (hier jUnit) übergeben.
 Die Testergebnisse werden an die aufrufende Komponente (entweder Übungsmodus oder Prüfungsmodul) zurückgegeben.</p>
 </div>
+<div class="paragraph">
+<p>Die Korrektheit soll mehrfach überprüft werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ergebnisse auf Korrektheit (Unit-Tests)</p>
+</li>
+<li>
+<p>Inhalt des Programmcodes überprüfen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Beispiel:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Zum Lösen des Beispiels darf man nicht die Methode reverse() verwenden.</p>
+</li>
+<li>
+<p>Es ist die Klasse StringBuilder zu verwenden.</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_offene_fragen"><a class="anchor" href="#_offene_fragen"></a>3.1.2. Offene Fragen</h4>
@@ -650,6 +676,10 @@ Die Testergebnisse werden an die aufrufende Komponente (entweder Übungsmodus od
 </ul>
 </div>
 </li>
+<li>
+<p>Es ist zu klären, ob auch ein Online-Editor angeboten werden soll.
+zB <a href="https://theia-ide.org/">Eclipse Theia</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -665,8 +695,10 @@ Beispiele entweder</p>
 <p>veröffentlichen (public) - andere Lehrkräfte und Lernende haben Zugriff</p>
 </li>
 <li>
-<p>privat setzen (private) - weder andere Lehrkräfte noch Lernendde können darauf zugreifen
-*</p>
+<p>privat setzen (private) - weder andere Lehrkräfte noch Lernendde können darauf zugreifen</p>
+</li>
+<li>
+<p>organisationsintern: nur andere Lehrende dürfen auf die Beispiele zugreifen, aber keine Lernenden</p>
 </li>
 </ul>
 </div>
@@ -858,7 +890,7 @@ Dabei wird ein Tag sowohl den Beispielen als auch einem Abschnitt im Lehrplan/Sy
 In den Ansichten / Übersichten der Bsp werden die verfügbaren Sprachen als Icons angezeigt.</p>
 </li>
 <li>
-<p>Die Implementierung der Teilsysteme kann frei gewählt werden.</p>
+<p>Die technischen Plattformen (Programmiersprachen) der Teilsysteme muss für die Funktion unerheblich sein.</p>
 </li>
 </ul>
 </div>
@@ -867,20 +899,20 @@ In den Ansichten / Übersichten der Bsp werden die verfügbaren Sprachen als Ico
 <div class="sect1">
 <h2 id="_ausbaustufen"><a class="anchor" href="#_ausbaustufen"></a>5. Ausbaustufen</h2>
 <div class="sectionbody">
-<div class="sect3">
-<h4 id="_erstellung_des_übungsmoduls_leocode_mit_der_programmiersprache_java"><a class="anchor" href="#_erstellung_des_übungsmoduls_leocode_mit_der_programmiersprache_java"></a>5.1. Erstellung des Übungsmoduls (LeoCode) mit der Programmiersprache Java</h4>
+<div class="sect2">
+<h3 id="_erstellung_des_übungsmoduls_leocode_mit_der_programmiersprache_java"><a class="anchor" href="#_erstellung_des_übungsmoduls_leocode_mit_der_programmiersprache_java"></a>5.1. Erstellung des Übungsmoduls (LeoCode) mit der Programmiersprache Java</h3>
 
 </div>
-<div class="sect3">
-<h4 id="_erstellung_des_umfragemoduls"><a class="anchor" href="#_erstellung_des_umfragemoduls"></a>5.2. Erstellung des Umfragemoduls</h4>
+<div class="sect2">
+<h3 id="_erstellung_des_umfragemoduls"><a class="anchor" href="#_erstellung_des_umfragemoduls"></a>5.2. Erstellung des Umfragemoduls</h3>
 
 </div>
-<div class="sect3">
-<h4 id="_erstellung_der_benutzerverwaltung"><a class="anchor" href="#_erstellung_der_benutzerverwaltung"></a>5.3. Erstellung der Benutzerverwaltung</h4>
+<div class="sect2">
+<h3 id="_erstellung_der_benutzerverwaltung"><a class="anchor" href="#_erstellung_der_benutzerverwaltung"></a>5.3. Erstellung der Benutzerverwaltung</h3>
 
 </div>
-<div class="sect3">
-<h4 id="_erstellung_des_prüfungsmoduls"><a class="anchor" href="#_erstellung_des_prüfungsmoduls"></a>5.4. Erstellung des Prüfungsmoduls</h4>
+<div class="sect2">
+<h3 id="_erstellung_des_prüfungsmoduls"><a class="anchor" href="#_erstellung_des_prüfungsmoduls"></a>5.4. Erstellung des Prüfungsmoduls</h3>
 
 </div>
 </div>
@@ -907,7 +939,7 @@ In den Ansichten / Übersichten der Bsp werden die verfügbaren Sprachen als Ico
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2020-04-18 16:49:04 UTC
+Last updated 2020-04-18 18:50:36 UTC
 </div>
 </div>
 </body>
