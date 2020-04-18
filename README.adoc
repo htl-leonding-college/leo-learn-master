@@ -7,3 +7,19 @@
 * https://htl-leonding-college.github.io/leo-learn-master
 * https://htl-leonding-college.github.io/leo-learn-master/leo-learn-req-specs.html[]
 
+== Diplomarbeit LeoCode 2021
+
+* Autor: Christian Donnabauer
+* Jahr: 2020/21
+
+[plantuml,time-schedule-da-donnabauer,png]
+----
+@startuml
+[Requirements Specification] lasts 10 days
+[Prototype completed] happens at [Requirements Specification]'s end
+[Setup assembly line] lasts 12 days
+[Setup assembly line] starts at [Requirements Specification]'s end
+[Test prototype 2] lasts 3 days
+[Test prototype 2] starts at [Prototype completed]'s end
+@enduml
+----
