@@ -96,11 +96,13 @@ Die Korrektheit soll mehrfach überprüft werden:
 
 * Ergebnisse auf Korrektheit (Unit-Tests)
 * Inhalt des Programmcodes überprüfen
-
++
 Beispiel:
++
+** Zum Lösen des Beispiels darf man nicht die Methode reverse() verwenden.
+** Es ist die Klasse StringBuilder zu verwenden.
+* `System.out.print` soll ebenfalls getestet werden können
 
-* Zum Lösen des Beispiels darf man nicht die Methode reverse() verwenden.
-* Es ist die Klasse StringBuilder zu verwenden.
 
 ==== Offene Fragen
 
