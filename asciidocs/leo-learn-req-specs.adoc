@@ -257,3 +257,13 @@ In den Ansichten / Übersichten der Bsp werden die verfügbaren Sprachen als Ico
 * Die Lösungen können veröffentlicht werden
 * Kommentare können sowohl zu Beispielsangaben als auch Lösungen hinzugefügt werden
 
+== Ziele
+
+* Routineaufgaben der Lehrenden, die den Lernenden keinen Mehrwert bringen, werden automatisiert. Die Lehrenden können sich mehr der individuellen Betreuung der Lernenden bzw Tätigkeiten widmen, die den Lehrenden unmittelbar nützen.
+
+* Eine verstärkte Koordination des Unterrichts in den jeweiligen Schulstufen und auch zwischen Parallelklassen.
+
+* (Neu-)lehrern steht ein große, speziell auf den Unterricht der Bildungseinrichtung abgestimmte Sammlung von Beispielen zur Verfügung.
+
+* Die Lernenden finden ein großes Angebot von Beispielen - zusätzlich zu den Unterrichtsbeispielen - vor.
+
