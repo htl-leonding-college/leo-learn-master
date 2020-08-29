@@ -1,0 +1,16 @@
+== User Stories
+
+IMPORTANT: User Stories sind NICHT vollständig, sondern nur beispielhaft angeführt
+
+* Als neuer Schüler an der HTL Leonding möchte ich unkompliziert,
+ohne vorherige Installation einer IDE / Editors einfache (Java-)Programme
+ausführen und auch ein Feedback erhalten, um so meine Übungsbeispiele durchführen zu können
+
+* Als neuer Schüler an der HTL Leonding möchte ich unkompliziert,
+meine (Java-)Programme die ich in meiner IDE / Editors erstellt habe
+auf einem Server abgeben könen und ein Feedback erhalten, ob die Aufgabe richtig gelöst wurde oder nicht ,
+um so ohne Lehrer besser lernen zu können
+
+* Als neuer Schüler an der HTL Leonding möchte ich zusätzliche Übungsbeispiele
+programmieren können und auch hier sofort Feedback erhalten, um selbstständig üben zu können.
+

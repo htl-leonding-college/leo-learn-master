@@ -1,17 +1,3 @@
-= LeoLearn
-:imagesdir: images
-:icons: font
-
-
-
-* https://htl-leonding-college.github.io/leo-learn-master
-* https://htl-leonding-college.github.io/leo-learn-master/leo-learn-req-specs.html[]
-
-== Diplomarbeit LeoCode 2021
-
-* Autor: Christian Donnabauer
-* Jahr: 2020/21
-
 [plantuml,time-schedule-da-donnabauer,png]
 ----
 @startuml

@@ -1,65 +1,270 @@
-= My Project
-firstname lastname
-1.0.1, yyyy-mm-dd
+= LeoLearn / LeoCode / LeoSurvey
+Thomas W. Stütz
+1.0.0, 2020-04-18
+ifndef::sourcedir[:sourcedir: ../src/main/java]
+ifndef::imagesdir[:imagesdir: images]
+ifndef::backend[:backend: html5]
 :sourcedir: ../src/main/java
 :icons: font
 :toc: left
+:sectnums:
+
+== Ausgangssituation
+
+An der HTL Leonding gibt es vier Fachrichtungen (Abteilung):
+
+* Informatik
+* Medientechnik
+* Elektronik
+* Medizintechnik
+
+und zusätzlich
+
+* Abendschule Informatik
+* Kolleg Informatik
+
+In allen diesen Zweigen wird Informatik mehr oder weniger intensiv unterrichtet.
+
+Das Bestreben einer HTL muss sein, die Qualität der Lehre in allen Bereichen zu sichern.
+Dazu gehört insbesondere die Koordination innerhalb der einzelnen Fachbereiche im Bereich "Informatik"
+
+Diese Koordination findet einerseits durch den gesetzlich vorgegebenen Lehrplan und andererseits durch schulinterne
+Präzisierung und Interpretation des Lehrplans.
+
+Der (informationstechnische) Unterricht an der HTL Leonding zeichnet sich durch einen hohe Praxisbezug aus,
+dh neben einem fundierten Theorerieunterricht wird Wert auf die praxisnahe Umsetzung in Form von
+Programmen, SQL-Statements usw. gelegt.
+
+== Problemstellung
+
+Bei der Umsetzung treten folgende Probleme auf:
+
+. Die Lernenden sind sehr heterogen bezüglich Vorkenntnisse, Leistungsbereitschaft und Leistungsvermögen.
+Den Lernenden sind daher für ihr jeweiliges Leistungsniveau Übungsbeispiele anzubieten.
+. Die Erstellung von Übungsaufgaben, deren Korrektur sowie die Erstellung des Feedbacks für die Schüler ist sehr zeitaufwendig.
+. Den neuen Lehrern an der Schule sind Unterlagen und Beispiele zur Verfügung zu stellen, um einen
+koordinierten Unterricht in allen Klassen sicherzustellen.
+. Neben den Übungen im Rahmen des Unterrichts wünschen die Lernenden oft weitere Beispiele zum Üben.
 
 
-== Pflichtenheft "Was mache ich"
+== Aufgabenstellung
+
+Erstellung eines modularen Systems in mehreren Ausbaustufen.
+
+image:Systemarchitektur-grob.png[]
+
+=== Übungsmodul image:icon-leo-code.png[width=17%]
+
+Im Übungsmodul stehen den Lernenden für jedes Beispiel:
+
+. die Angabe (Tab Instructions)
+. ev. die verwendeten Tests (Tab Test-suite)
+. sowohl eine Möglichkeit zum Upload der Lösung (Tab Solution)
+
+Im folgenden sind Screenshots der Lernplattform https://exercism.io zu sehen
+
+.Überblick über die einzelnen Beispiele
+image:exercism-exercises-overview.png[width=70%]
+
+.Beispielsangaben
+image:exercism-exercises-instructions.png[width=70%]
+
+.Unittests
+image:exercism-exercises-test-suite.png[width=70%]
+
+.Upload für Lösungen
+image:exercism-exercises-solution.png[width=70%]
 
 
-=== Ausgangssituation
+==== Prüfung der Korrektheit
 
-Die HTL Leonding ist eine HTL im oö. Zentralraum mit ca. 1000 Schülern und den Fachabteilungen Medientechnik, Informatik, ....
-
-=== Istzustand
-----
-Beschreibung der speziellen Situation zB in der Abteilung
-----
-=== Problemstellung
-=== Aufgabenstellung
-==== Funktionale Anforderungen
-
-[plantuml,wireframe,png]
-----
-@startsalt
-{
-Name         | "                 "
-Modifiers:   | { (X) public | () default | () private | () protected
-	            [] abstract | [] final   | [] static }
-Superclass:  | { "java.lang.Object " | [Browse...] }
-}
-@endsalt
-----
-==== Nichtfunktionale Anforderungen (NFA)
-=== Ziele
-=== Mengengerüst
-=== Rahmenbedingungen
-zB Vorgaben vom Auftraggeber
-
-== Entwurf "Wie mache ich es"
-=== Systemarchitektur
-=== ...
-
-== Projekthandbuch "Organisatorische Rahmenbedingungen"
-
-=== GANTT-Diagramm
-
-mit User-Stories (definiert in YouTrack)
-
-[plantuml,gantt-protoype,png]
+[plantuml,process-unit-testing,png]
 ----
 @startuml
-[Test prototype] lasts 10 days
-[Prototype completed] happens at [Test prototype]'s end
-[Setup assembly line] lasts 12 days
-[Setup assembly line] starts at [Test prototype]'s end
-[Test prototype 2] lasts 3 days
-[Test prototype 2] starts at [Prototype completed]'s end
+file "Solution\nProgrammcode" as solution
+component "Unit-Test" as unittest
+component "Aufrufende\nKomponente" as caller
+solution -right-> unittest
+unittest -right-> caller
 @enduml
 ----
 
+Der vom Lernenden erstellte Programmcode wird an ein Testsystem (hier jUnit) übergeben.
+Die Testergebnisse werden an die aufrufende Komponente (entweder Übungsmodus oder Prüfungsmodul) zurückgegeben.
 
-link:demo.html[Demo]
+Die Korrektheit soll mehrfach überprüft werden:
 
+* Ergebnisse auf Korrektheit (Unit-Tests)
+* Inhalt des Programmcodes überprüfen
++
+Beispiel:
++
+** Zum Lösen des Beispiels darf man nicht die Methode reverse() verwenden.
+** Es ist die Klasse StringBuilder zu verwenden.
+* `System.out.print` soll ebenfalls getestet werden können
+
+
+==== Offene Fragen
+
+* Es ist zu prüfen, wie die Unittests technisch durchgeführt werden (ev. mit Jenkins)
+* Die Organisation der Beispiele ist zu prüfen.
+** Beispielsorientiert: Beispiele - Zuordnung zu Thema/Themen - Darstellung aller Programmiersprachen
++
+[plantuml,exercise-structure-example,png]
+----
+@startsalt
+{
+{T
+ + Beispiele
+ ++ Beispiel 1 (Programmiersprache XY)
+ +++ Thema A
+ +++ Thema B
+ ++ Beispiel 2 (Programmiersprache XY, Programmiersprache YZ)
+ +++ Thema A
+ +++ Thema C
+}
+}
+@endsalt
+----
+
+** Sprachenorientiert: Programmiersprache - Beispiele - Zuordnung zu Thema/Themen
++
+[plantuml,exercise-structure-language,png]
+----
+@startsalt
+{
+{T
+ + Programmiersprachen
+ ++ Programmiersprache XY
+ +++ Beispiel 1
+ ++++ Thema A
+ ++++ Thema B
+ +++ Beispiel 2
+ ++++ Thema A
+ ++++ Thema C
+ ++ Programmiersprache YZ
+ +++ Beispiel 1
+ ++++ Thema A
+ ++++ Thema B
+ +++ Beispiel 2
+ ++++ Thema A
+ ++++ Thema C
+}
+}
+@endsalt
+----
+
+* Es ist zu klären, ob auch ein Online-Editor angeboten werden soll.
+zB https://theia-ide.org/[Eclipse Theia]
+
+==== Private, organisationsinterne und öffentliche Beispiele
+
+Berechtigte Personen (meist Lehrkräfte der HTL Leonding) können Beispiele erstellen und diese
+Beispiele entweder
+
+* veröffentlichen (public) - andere Lehrkräfte und Lernende haben Zugriff
+* privat setzen (private) - weder andere Lehrkräfte noch Lernendde können darauf zugreifen
+* organisationsintern: nur andere Lehrende dürfen auf die Beispiele zugreifen, aber keine Lernenden
+
+IMPORTANT: Im Vorfeld der Arbeit sind bestehende Formate zur Darstellung von Lernaufgaben
+zu analysieren und auf ihre Verwendbarkeit zu prüfen (zB SCORM, LOM, http://www.imsproject.org/question/index.html[IMS QTI]).
+
+=== Prüfungsmodul
+
+Das Prüfungsmodul kann für Lernzielkontrollen oder Tests eingesetzt werden.
+Eine solche Prüfung kann sich aus Programmierbeispielen (aus LeoCode) und/oder
+aus Fragen aus dem Umfragemodul (LeoSurvey) zusammensetzen
+
+[plantuml,leo-survey-ablauf,png]
+----
+@startuml
+rectangle Vorbereitung
+rectangle Durchführung
+rectangle Nachbereitung
+Vorbereitung -right-> Durchführung
+Durchführung -right-> Nachbereitung
+@enduml
+----
+
+Das Prüfungsmodul übernimmt hierbei folgende Aufgaben:
+
+==== Prüfungsvorbereitung
+
+* Zusammenstellen der Prüfungen aus vorhandenen Beispielen / Fragen
+* Festlegen des Bewertungssystems (Punktegewichtung der einzelnen Fragen)
+* Erstellen der TANs (Transaktionscodes)
+
+==== Prüfungsdurchführung
+
+* Durchführung der Prüfung
+* Ev. zeitliche Restriktionen
+* Falls gewünscht werden den Teilnehmern die Ergebnisse sofort angezeigt
+
+==== Prüfungsnachbereitung
+
+* Automatische Vorkorrektur der Prüfungen
+* Vorlage der Ergebnisse für die betreuende Person (meist Lehrkraft)
+* auf Wunsch, Weiterleitung der Ergebnisse an Teilnehmer (vorher Eingabe einer email-Adresses)
+
+=== Umfragemodul image:icon-leo-survey.png[width=20%]
+
+* Es können beliebige Fragebögen (Questionnaire) erstellt werden werden
+* Folgende Fragetypen stehen (zumindest) zur Verfügung
+** Freitext
+** Multiple Choice
+** Single Choice
+** Ja/Nein-Fragen
+* Umfragen (Surveys) können erstellt werden
+** Zuordung zu Fragebogen
+** Datumsbereich zur Beantwortung der Umfrage
+* Auswertung der Umfrage
+** Graphische Auswertung mit Diagrammen
+** Textuelle Darstellung er Freitexte
+
+=== Benutzerauthentifizierung
+
+* Benutzerdaten sowohl der Betreuungspersonen (Lehrkräfte) als auch der Lernenden.
+* Anbindung zum LDAP der HTL Leonding
+* Die Übungshistorie der Lernenden wird dokumentiert -> Portfolio
+
+
+=== Syllabus - Lehrplan - Lehrstruktur
+
+* Hier können beliebige Lehrpläne, Syllabi usw eingegeben werden.
+* Die Beispiele können über Tags diesen Lehrplänen/Syllabi zugeordnet werden.
+Dabei wird ein Tag sowohl den Beispielen als auch einem Abschnitt im Lehrplan/Syllabus zugeordnet.
+* Lehrpläne/Syllabi können kopiert werden (unter Mitnahme der Tags)
+
+== Anforderungen
+
+* Die Teilsysteme sind lose gekoppelt, Informationen / Daten werden durch klar definierte Schnittstellen ausgetauscht.
+* Das System "LeoLearn" kann beliebig erweitert werden; durch zB ein Vokabellernmodul
+* Schnittstellen zu LMS zB https://edufs.edu.htl-leonding.ac.at/moodle[Moodle], https://bigbluebutton.org[BigBlueButton]
+* Das System ist mehrsprachig (I18N). So kann man zB die Instructions in mehreren Sprachen angeben.
+In den Ansichten / Übersichten der Bsp werden die verfügbaren Sprachen als Icons angezeigt.
+* Die technischen Plattformen (Programmiersprachen) der Teilsysteme muss für die Funktion unerheblich sein.
+
+== Ausbaustufen
+
+=== Erstellung des Übungsmoduls (LeoCode) mit der Programmiersprache Java
+=== Erstellung des Umfragemoduls
+=== Erstellung der Benutzerverwaltung
+=== Erstellung des Prüfungsmoduls
+
+== Mögliche Erweiterungen
+
+* Die Lernenden können eigene Beispiele posten
+* Die Lösungen können veröffentlicht werden
+* Kommentare können sowohl zu Beispielsangaben als auch Lösungen hinzugefügt werden
+
+== Ziele
+
+* Routineaufgaben der Lehrenden, die den Lernenden keinen Mehrwert bringen, werden automatisiert. Die Lehrenden können sich mehr der individuellen Betreuung der Lernenden bzw Tätigkeiten widmen, die den Lehrenden unmittelbar nützen.
+
+* Eine verstärkte Koordination des Unterrichts in den jeweiligen Schulstufen und auch zwischen Parallelklassen.
+
+* (Neu-)lehrern steht ein große, speziell auf den Unterricht der Bildungseinrichtung abgestimmte Sammlung von Beispielen zur Verfügung.
+
+* Die Lernenden finden ein großes Angebot von Beispielen - zusätzlich zu den Unterrichtsbeispielen - vor.
+
+include::modules.adoc[]
