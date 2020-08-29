@@ -5,9 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="author" content="Thomas W. Stütz">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>LeoLearn / LeoCode / LeoSurvey</title>
+<title>User Stories</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -449,264 +448,17 @@ pre.rouge .hll * {
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>LeoLearn / LeoCode / LeoSurvey</h1>
-<div class="details">
-<span id="author" class="author">Thomas W. Stütz</span><br>
-<span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2020-04-18</span>
-</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_ausgangssituation">1. Ausgangssituation</a></li>
-<li><a href="#_problemstellung">2. Problemstellung</a></li>
-<li><a href="#_aufgabenstellung">3. Aufgabenstellung</a>
-<ul class="sectlevel2">
-<li><a href="#_übungsmodul">3.1. Übungsmodul <span class="image"><img src="images/icon-leo-code.png" alt="icon leo code" width="17%"></span></a></li>
-<li><a href="#_prüfungsmodul">3.2. Prüfungsmodul</a></li>
-<li><a href="#_umfragemodul">3.3. Umfragemodul <span class="image"><img src="images/icon-leo-survey.png" alt="icon leo survey" width="20%"></span></a></li>
-<li><a href="#_benutzerauthentifizierung">3.4. Benutzerauthentifizierung</a></li>
-<li><a href="#_syllabus_lehrplan_lehrstruktur">3.5. Syllabus - Lehrplan - Lehrstruktur</a></li>
-</ul>
-</li>
-<li><a href="#_anforderungen">4. Anforderungen</a></li>
-<li><a href="#_ausbaustufen">5. Ausbaustufen</a>
-<ul class="sectlevel2">
-<li><a href="#_erstellung_des_übungsmoduls_leocode_mit_der_programmiersprache_java">5.1. Erstellung des Übungsmoduls (LeoCode) mit der Programmiersprache Java</a></li>
-<li><a href="#_erstellung_des_umfragemoduls">5.2. Erstellung des Umfragemoduls</a></li>
-<li><a href="#_erstellung_der_benutzerverwaltung">5.3. Erstellung der Benutzerverwaltung</a></li>
-<li><a href="#_erstellung_des_prüfungsmoduls">5.4. Erstellung des Prüfungsmoduls</a></li>
-</ul>
-</li>
-<li><a href="#_mögliche_erweiterungen">6. Mögliche Erweiterungen</a></li>
-<li><a href="#_ziele">7. Ziele</a></li>
-<li><a href="#_weitere_kapitel">8. Weitere Kapitel</a></li>
+<li><a href="#_user_stories">1. User Stories</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_ausgangssituation"><a class="anchor" href="#_ausgangssituation"></a>1. Ausgangssituation</h2>
+<h2 id="_user_stories"><a class="anchor" href="#_user_stories"></a>1. User Stories</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>An der HTL Leonding gibt es vier Fachrichtungen (Abteilung):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Informatik</p>
-</li>
-<li>
-<p>Medientechnik</p>
-</li>
-<li>
-<p>Elektronik</p>
-</li>
-<li>
-<p>Medizintechnik</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>und zusätzlich</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Abendschule Informatik</p>
-</li>
-<li>
-<p>Kolleg Informatik</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In allen diesen Zweigen wird Informatik mehr oder weniger intensiv unterrichtet.</p>
-</div>
-<div class="paragraph">
-<p>Das Bestreben einer HTL muss sein, die Qualität der Lehre in allen Bereichen zu sichern.
-Dazu gehört insbesondere die Koordination innerhalb der einzelnen Fachbereiche im Bereich "Informatik"</p>
-</div>
-<div class="paragraph">
-<p>Diese Koordination findet einerseits durch den gesetzlich vorgegebenen Lehrplan und andererseits durch schulinterne
-Präzisierung und Interpretation des Lehrplans.</p>
-</div>
-<div class="paragraph">
-<p>Der (informationstechnische) Unterricht an der HTL Leonding zeichnet sich durch einen hohe Praxisbezug aus,
-dh neben einem fundierten Theorerieunterricht wird Wert auf die praxisnahe Umsetzung in Form von
-Programmen, SQL-Statements usw. gelegt.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_problemstellung"><a class="anchor" href="#_problemstellung"></a>2. Problemstellung</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Bei der Umsetzung treten folgende Probleme auf:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Die Lernenden sind sehr heterogen bezüglich Vorkenntnisse, Leistungsbereitschaft und Leistungsvermögen.
-Den Lernenden sind daher für ihr jeweiliges Leistungsniveau Übungsbeispiele anzubieten.</p>
-</li>
-<li>
-<p>Die Erstellung von Übungsaufgaben, deren Korrektur sowie die Erstellung des Feedbacks für die Schüler ist sehr zeitaufwendig.</p>
-</li>
-<li>
-<p>Den neuen Lehrern an der Schule sind Unterlagen und Beispiele zur Verfügung zu stellen, um einen
-koordinierten Unterricht in allen Klassen sicherzustellen.</p>
-</li>
-<li>
-<p>Neben den Übungen im Rahmen des Unterrichts wünschen die Lernenden oft weitere Beispiele zum Üben.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_aufgabenstellung"><a class="anchor" href="#_aufgabenstellung"></a>3. Aufgabenstellung</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Erstellung eines modularen Systems in mehreren Ausbaustufen.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/Systemarchitektur-grob.png" alt="Systemarchitektur grob"></span></p>
-</div>
-<div class="sect2">
-<h3 id="_übungsmodul"><a class="anchor" href="#_übungsmodul"></a>3.1. Übungsmodul <span class="image"><img src="images/icon-leo-code.png" alt="icon leo code" width="17%"></span></h3>
-<div class="paragraph">
-<p>Im Übungsmodul stehen den Lernenden für jedes Beispiel:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>die Angabe (Tab Instructions)</p>
-</li>
-<li>
-<p>ev. die verwendeten Tests (Tab Test-suite)</p>
-</li>
-<li>
-<p>sowohl eine Möglichkeit zum Upload der Lösung (Tab Solution)</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Im folgenden sind Screenshots der Lernplattform <a href="https://exercism.io" class="bare">https://exercism.io</a> zu sehen</p>
-</div>
-<div class="paragraph">
-<div class="title">Überblick über die einzelnen Beispiele</div>
-<p><span class="image"><img src="images/exercism-exercises-overview.png" alt="exercism exercises overview" width="70%"></span></p>
-</div>
-<div class="paragraph">
-<div class="title">Beispielsangaben</div>
-<p><span class="image"><img src="images/exercism-exercises-instructions.png" alt="exercism exercises instructions" width="70%"></span></p>
-</div>
-<div class="paragraph">
-<div class="title">Unittests</div>
-<p><span class="image"><img src="images/exercism-exercises-test-suite.png" alt="exercism exercises test suite" width="70%"></span></p>
-</div>
-<div class="paragraph">
-<div class="title">Upload für Lösungen</div>
-<p><span class="image"><img src="images/exercism-exercises-solution.png" alt="exercism exercises solution" width="70%"></span></p>
-</div>
-<div class="sect3">
-<h4 id="_prüfung_der_korrektheit"><a class="anchor" href="#_prüfung_der_korrektheit"></a>3.1.1. Prüfung der Korrektheit</h4>
-<div class="imageblock">
-<div class="content">
-<img src="images/process-unit-testing.png" alt="process unit testing" width="406" height="71">
-</div>
-</div>
-<div class="paragraph">
-<p>Der vom Lernenden erstellte Programmcode wird an ein Testsystem (hier jUnit) übergeben.
-Die Testergebnisse werden an die aufrufende Komponente (entweder Übungsmodus oder Prüfungsmodul) zurückgegeben.</p>
-</div>
-<div class="paragraph">
-<p>Die Korrektheit soll mehrfach überprüft werden:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Ergebnisse auf Korrektheit (Unit-Tests)</p>
-</li>
-<li>
-<p>Inhalt des Programmcodes überprüfen</p>
-<div class="paragraph">
-<p>Beispiel:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Zum Lösen des Beispiels darf man nicht die Methode reverse() verwenden.</p>
-</li>
-<li>
-<p>Es ist die Klasse StringBuilder zu verwenden.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>System.out.print</code> soll ebenfalls getestet werden können</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_offene_fragen"><a class="anchor" href="#_offene_fragen"></a>3.1.2. Offene Fragen</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Es ist zu prüfen, wie die Unittests technisch durchgeführt werden (ev. mit Jenkins)</p>
-</li>
-<li>
-<p>Die Organisation der Beispiele ist zu prüfen.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Beispielsorientiert: Beispiele - Zuordnung zu Thema/Themen - Darstellung aller Programmiersprachen</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/exercise-structure-example.png" alt="exercise structure example" width="414" height="108">
-</div>
-</div>
-</li>
-<li>
-<p>Sprachenorientiert: Programmiersprache - Beispiele - Zuordnung zu Thema/Themen</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/exercise-structure-language.png" alt="exercise structure language" width="183" height="220">
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Es ist zu klären, ob auch ein Online-Editor angeboten werden soll.
-zB <a href="https://theia-ide.org/">Eclipse Theia</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_private_organisationsinterne_und_öffentliche_beispiele"><a class="anchor" href="#_private_organisationsinterne_und_öffentliche_beispiele"></a>3.1.3. Private, organisationsinterne und öffentliche Beispiele</h4>
-<div class="paragraph">
-<p>Berechtigte Personen (meist Lehrkräfte der HTL Leonding) können Beispiele erstellen und diese
-Beispiele entweder</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>veröffentlichen (public) - andere Lehrkräfte und Lernende haben Zugriff</p>
-</li>
-<li>
-<p>privat setzen (private) - weder andere Lehrkräfte noch Lernendde können darauf zugreifen</p>
-</li>
-<li>
-<p>organisationsintern: nur andere Lehrende dürfen auf die Beispiele zugreifen, aber keine Lernenden</p>
-</li>
-</ul>
-</div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -714,266 +466,27 @@ Beispiele entweder</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Im Vorfeld der Arbeit sind bestehende Formate zur Darstellung von Lernaufgaben
-zu analysieren und auf ihre Verwendbarkeit zu prüfen (zB SCORM, LOM, <a href="http://www.imsproject.org/question/index.html">IMS QTI</a>).
+User Stories sind NICHT vollständig, sondern nur beispielhaft angeführt
 </td>
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_prüfungsmodul"><a class="anchor" href="#_prüfungsmodul"></a>3.2. Prüfungsmodul</h3>
-<div class="paragraph">
-<p>Das Prüfungsmodul kann für Lernzielkontrollen oder Tests eingesetzt werden.
-Eine solche Prüfung kann sich aus Programmierbeispielen (aus LeoCode) und/oder
-aus Fragen aus dem Umfragemodul (LeoSurvey) zusammensetzen</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/leo-survey-ablauf.png" alt="leo survey ablauf" width="434" height="54">
-</div>
-</div>
-<div class="paragraph">
-<p>Das Prüfungsmodul übernimmt hierbei folgende Aufgaben:</p>
-</div>
-<div class="sect3">
-<h4 id="_prüfungsvorbereitung"><a class="anchor" href="#_prüfungsvorbereitung"></a>3.2.1. Prüfungsvorbereitung</h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Zusammenstellen der Prüfungen aus vorhandenen Beispielen / Fragen</p>
+<p>Als neuer Schüler an der HTL Leonding möchte ich unkompliziert,
+ohne vorherige Installation einer IDE / Editors einfache (Java-)Programme
+ausführen und auch ein Feedback erhalten, um so meine Übungsbeispiele durchführen zu können</p>
 </li>
 <li>
-<p>Festlegen des Bewertungssystems (Punktegewichtung der einzelnen Fragen)</p>
+<p>Als neuer Schüler an der HTL Leonding möchte ich unkompliziert,
+meine (Java-)Programme die ich in meiner IDE / Editors erstellt habe
+auf einem Server abgeben könen und ein Feedback erhalten, ob die Aufgabe richtig gelöst wurde oder nicht ,
+um so ohne Lehrer besser lernen zu können</p>
 </li>
 <li>
-<p>Erstellen der TANs (Transaktionscodes)</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_prüfungsdurchführung"><a class="anchor" href="#_prüfungsdurchführung"></a>3.2.2. Prüfungsdurchführung</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Durchführung der Prüfung</p>
-</li>
-<li>
-<p>Ev. zeitliche Restriktionen</p>
-</li>
-<li>
-<p>Falls gewünscht werden den Teilnehmern die Ergebnisse sofort angezeigt</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_prüfungsnachbereitung"><a class="anchor" href="#_prüfungsnachbereitung"></a>3.2.3. Prüfungsnachbereitung</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Automatische Vorkorrektur der Prüfungen</p>
-</li>
-<li>
-<p>Vorlage der Ergebnisse für die betreuende Person (meist Lehrkraft)</p>
-</li>
-<li>
-<p>auf Wunsch, Weiterleitung der Ergebnisse an Teilnehmer (vorher Eingabe einer email-Adresses)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_umfragemodul"><a class="anchor" href="#_umfragemodul"></a>3.3. Umfragemodul <span class="image"><img src="images/icon-leo-survey.png" alt="icon leo survey" width="20%"></span></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Es können beliebige Fragebögen (Questionnaire) erstellt werden werden</p>
-</li>
-<li>
-<p>Folgende Fragetypen stehen (zumindest) zur Verfügung</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Freitext</p>
-</li>
-<li>
-<p>Multiple Choice</p>
-</li>
-<li>
-<p>Single Choice</p>
-</li>
-<li>
-<p>Ja/Nein-Fragen</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Umfragen (Surveys) können erstellt werden</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Zuordung zu Fragebogen</p>
-</li>
-<li>
-<p>Datumsbereich zur Beantwortung der Umfrage</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Auswertung der Umfrage</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Graphische Auswertung mit Diagrammen</p>
-</li>
-<li>
-<p>Textuelle Darstellung er Freitexte</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_benutzerauthentifizierung"><a class="anchor" href="#_benutzerauthentifizierung"></a>3.4. Benutzerauthentifizierung</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Benutzerdaten sowohl der Betreuungspersonen (Lehrkräfte) als auch der Lernenden.</p>
-</li>
-<li>
-<p>Anbindung zum LDAP der HTL Leonding</p>
-</li>
-<li>
-<p>Die Übungshistorie der Lernenden wird dokumentiert &#8594; Portfolio</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_syllabus_lehrplan_lehrstruktur"><a class="anchor" href="#_syllabus_lehrplan_lehrstruktur"></a>3.5. Syllabus - Lehrplan - Lehrstruktur</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Hier können beliebige Lehrpläne, Syllabi usw eingegeben werden.</p>
-</li>
-<li>
-<p>Die Beispiele können über Tags diesen Lehrplänen/Syllabi zugeordnet werden.
-Dabei wird ein Tag sowohl den Beispielen als auch einem Abschnitt im Lehrplan/Syllabus zugeordnet.</p>
-</li>
-<li>
-<p>Lehrpläne/Syllabi können kopiert werden (unter Mitnahme der Tags)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_anforderungen"><a class="anchor" href="#_anforderungen"></a>4. Anforderungen</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Die Teilsysteme sind lose gekoppelt, Informationen / Daten werden durch klar definierte Schnittstellen ausgetauscht.</p>
-</li>
-<li>
-<p>Das System "LeoLearn" kann beliebig erweitert werden; durch zB ein Vokabellernmodul</p>
-</li>
-<li>
-<p>Schnittstellen zu LMS zB <a href="https://edufs.edu.htl-leonding.ac.at/moodle">Moodle</a>, <a href="https://bigbluebutton.org">BigBlueButton</a></p>
-</li>
-<li>
-<p>Das System ist mehrsprachig (I18N). So kann man zB die Instructions in mehreren Sprachen angeben.
-In den Ansichten / Übersichten der Bsp werden die verfügbaren Sprachen als Icons angezeigt.</p>
-</li>
-<li>
-<p>Die technischen Plattformen (Programmiersprachen) der Teilsysteme muss für die Funktion unerheblich sein.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_ausbaustufen"><a class="anchor" href="#_ausbaustufen"></a>5. Ausbaustufen</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_erstellung_des_übungsmoduls_leocode_mit_der_programmiersprache_java"><a class="anchor" href="#_erstellung_des_übungsmoduls_leocode_mit_der_programmiersprache_java"></a>5.1. Erstellung des Übungsmoduls (LeoCode) mit der Programmiersprache Java</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_erstellung_des_umfragemoduls"><a class="anchor" href="#_erstellung_des_umfragemoduls"></a>5.2. Erstellung des Umfragemoduls</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_erstellung_der_benutzerverwaltung"><a class="anchor" href="#_erstellung_der_benutzerverwaltung"></a>5.3. Erstellung der Benutzerverwaltung</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_erstellung_des_prüfungsmoduls"><a class="anchor" href="#_erstellung_des_prüfungsmoduls"></a>5.4. Erstellung des Prüfungsmoduls</h3>
-
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_mögliche_erweiterungen"><a class="anchor" href="#_mögliche_erweiterungen"></a>6. Mögliche Erweiterungen</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Die Lernenden können eigene Beispiele posten</p>
-</li>
-<li>
-<p>Die Lösungen können veröffentlicht werden</p>
-</li>
-<li>
-<p>Kommentare können sowohl zu Beispielsangaben als auch Lösungen hinzugefügt werden</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_ziele"><a class="anchor" href="#_ziele"></a>7. Ziele</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Routineaufgaben der Lehrenden, die den Lernenden keinen Mehrwert bringen, werden automatisiert. Die Lehrenden können sich mehr der individuellen Betreuung der Lernenden bzw Tätigkeiten widmen, die den Lehrenden unmittelbar nützen.</p>
-</li>
-<li>
-<p>Eine verstärkte Koordination des Unterrichts in den jeweiligen Schulstufen und auch zwischen Parallelklassen.</p>
-</li>
-<li>
-<p>(Neu-)lehrern steht ein große, speziell auf den Unterricht der Bildungseinrichtung abgestimmte Sammlung von Beispielen zur Verfügung.</p>
-</li>
-<li>
-<p>Die Lernenden finden ein großes Angebot von Beispielen - zusätzlich zu den Unterrichtsbeispielen - vor.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_weitere_kapitel"><a class="anchor" href="#_weitere_kapitel"></a>8. Weitere Kapitel</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="sysarch.html">Systemarchitektur</a></p>
-</li>
-<li>
-<p><a href="user-stories.html">User Stories</a></p>
-</li>
-<li>
-<p><a href="schedule.html">Zeitplan DA C. Donnabauer</a></p>
+<p>Als neuer Schüler an der HTL Leonding möchte ich zusätzliche Übungsbeispiele
+programmieren können und auch hier sofort Feedback erhalten, um selbstständig üben zu können.</p>
 </li>
 </ul>
 </div>
@@ -982,8 +495,7 @@ In den Ansichten / Übersichten der Bsp werden die verfügbaren Sprachen als Ico
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0.0<br>
-Last updated 2020-08-29 09:44:19 UTC
+Last updated 2020-08-29 09:39:48 UTC
 </div>
 </div>
 </body>
