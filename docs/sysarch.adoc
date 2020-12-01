@@ -1,0 +1,50 @@
+== Systemarchitektur
+
+[plantuml,sysarch,png]
+----
+@startuml
+package "Jenkins" {
+  [ProjectUnderTest]
+}
+package "local git-repo" as git {
+  [ProjectUnderTestRepo]
+}
+node "LeoCodeJavaTesting" <<quarkus>> as javatesting
+node "LeoBackend" <<quarkus>> as backend
+node "LeoGui" <<nodeJS>> as guiserver
+node "Browser" <<angular>> as browser
+() GuiApi
+() BackendApi
+() TestApi
+
+javatesting -right-> git
+[ProjectUnderTest] -right-> [ProjectUnderTestRepo]
+javatesting -down-> TestApi
+backend .up.> TestApi : use
+backend -down-> BackendApi
+guiserver .up.> BackendApi : use
+guiserver -down-> GuiApi
+browser .up.> GuiApi : use
+
+'note right of javatesting : mvn test
+
+@enduml
+----
+
+== Optionen
+
+=== Option 1: Testen als Prozess
+
+* Die Tests werden auf der Shell mit `mvn` durchgeführt.
+* Probleme
+** Vermischung von Produktivsystem und ProjectUnderTest (gleiches Environment)
+** Ev. durch Verwendung von Graal können Tests nicht durchgeführt werden
+
+=== Option 2: Auslagern in  Automatisierungsserver
+
+* zB Jenkins
+* Vorteile
+** Völlige Trennung des Testsystems vom aufrufenden System
+** dadurch können die Ergebnisse kontrolliert werden (i.S.v. tracing)
+** Einbindung per RestApi oder durch Hook im Jenkins
+
