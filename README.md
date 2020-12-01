@@ -15,9 +15,9 @@ Zum Lernen von Java
 * Autor: Christian Donnabauer
 * Jahr: 2020/21
 
-<https://github.com/donnabauerc/LeoCode/>
-<https://github.com/donnabauerc/LeoCodeDocs/>
+- <https://github.com/donnabauerc/LeoCode/>
+- <https://github.com/donnabauerc/LeoCodeDocs/>
 
 ## Projektarbeit 4ahif 2021-2122
 
-<https://github.com/htl-leonding-project/leo-code>
+- <https://github.com/htl-leonding-project/leo-code>
